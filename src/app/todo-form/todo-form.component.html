@@ -1,0 +1,8 @@
+<div>
+  <input type="text"
+         placeholder="введите заметку..."
+         [(ngModel)]="title"
+         (keydown.enter)="addTodo()"
+  >
+  <button (click)="addTodo()">Добавить</button>
+</div>

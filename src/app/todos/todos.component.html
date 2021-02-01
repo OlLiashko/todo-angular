@@ -1,0 +1,14 @@
+<ul *ngIf="todoService.todos.length; else noTodos">
+  <li *ngFor="let todo of todoService.todos; let i = index">
+    <span [class.done]="todo.completed">
+      <input type="checkbox" [checked]="todo.completed" (change)="onChange(todo.id)">
+      <strong>{{i + 1}}</strong> {{todo.title}}
+    </span>
+
+    <button class="rm" (click)="removeTodo(todo.id)">&times;</button>
+  </li>
+</ul>
+
+<ng-template #noTodos>
+  <p style="text-align: center;">Список дел пуст!</p>
+</ng-template>
